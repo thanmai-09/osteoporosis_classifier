@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osteoporosis Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="title">OSTEOPOROSIS</div>
+        <div class="nav">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="#">About Us</a>
+            <a href="{{ url_for('read_me') }}">Read Me</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Welcome to Osteoporosis Classifier</h1>
+        <p>This tool helps in the early detection of osteoporosis.<br>
+        Please upload your files for analysis.</p>
+
+        <form action="{{ url_for('result') }}" method="POST" enctype="multipart/form-data" class="upload-box">
+            <input type="file" name="file" accept="image/*" required>
+            <br>
+            <button type="submit">Upload & Analyze</button>
+        </form>
+    </div>
+</body>
+</html>

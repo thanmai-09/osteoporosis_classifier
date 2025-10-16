@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Me</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="title">OSTEOPOROSIS</div>
+        <div class="nav">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="#">About Us</a>
+            <a href="{{ url_for('read_me') }}">Read Me</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Read Me</h1>
+        <p>This page provides instructions and information about the application.</p>
+        <p><strong>How to use:</strong></p>
+        <ul style="text-align:left; width: 60%; margin: auto;">
+            <li>Click on "Home".</li>
+            <li>Upload an image (like an X-ray scan).</li>
+            <li>Click "Upload & Analyze".</li>
+            <li>You will see the classification result.</li>
+        </ul>
+    </div>
+</body>
+</html>
