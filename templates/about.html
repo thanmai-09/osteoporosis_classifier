@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .content p, .content ul { width: 60%; margin: 10px auto; line-height: 1.6; text-align: left; }
+        .content h2 { color: #00aee6; margin-top: 24px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">OSTEOPOROSIS</div>
+        <div class="nav">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About Us</a>
+            <a href="{{ url_for('read_me') }}">Read Me</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>About This Project</h1>
+        <p>
+            Osteoporosis Classifier is a simple Flask web app that demonstrates an image-based
+            classification workflow. You can upload an image (e.g., X-ray) and see a classification
+            result. The current version uses a placeholder output; plug in your trained model to
+            produce real predictions.
+        </p>
+
+        <h2>What It Does</h2>
+        <ul>
+            <li>Accepts a single image upload and validates basic file type/size.</li>
+            <li>Saves the file to a local <code>uploads/</code> folder.</li>
+            <li>Runs a placeholder “Normal / Osteoporotic” result.</li>
+            <li>Designed for easy integration of your ML inference code.</li>
+        </ul>
+
+        <h2>Current Status</h2>
+        <ul>
+            <li>UI and routing are implemented (Home, Read Me, About, Results).</li>
+            <li>Basic image validation is enabled using Pillow.</li>
+            <li>No clinical model is included; you must integrate your own.</li>
+        </ul>
+
+        <h2>Data & Datasets</h2>
+        <p>
+            Sample dataset archives (e.g., MedicalExpert) are placed in the <code>datasets/</code> folder.
+            They are not automatically used by the app. If you plan to train or evaluate a model,
+            add scripts or notebooks to preprocess and use these datasets and ensure proper licensing and attribution.
+        </p>
+
+        <h2>Privacy & Ethics</h2>
+        <ul>
+            <li>Uploaded files are stored locally in <code>uploads/</code>; review and manage retention policies.</li>
+            <li>This app is for demonstration/education purposes and is not medical advice.</li>
+            <li>For sensitive data, implement stronger security, access controls, and anonymization.</li>
+        </ul>
+
+        <h2>Roadmap</h2>
+        <ul>
+            <li>Integrate a real osteoporosis classification model with confidence scores.</li>
+            <li>Show uploaded image preview and richer result details.</li>
+            <li>Improve error messaging and add tests.</li>
+            <li>Containerize and document production deployment.</li>
+        </ul>
+
+        <h2>Credits & Contact</h2>
+        <p>
+            Built as a lightweight starting point for medical imaging workflows. If you use third-party datasets or models,
+            please credit the original authors. For questions or contributions, reach out or open an issue.
+        </p>
+    </div>
+</body>
+</html>

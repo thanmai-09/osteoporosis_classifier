@@ -11,7 +11,7 @@
         <div class="title">OSTEOPOROSIS</div>
         <div class="nav">
             <a href="{{ url_for('index') }}">Home</a>
-            <a href="#">About Us</a>
+            <a href="{{ url_for('about') }}">About Us</a>
             <a href="{{ url_for('read_me') }}">Read Me</a>
         </div>
     </div>
@@ -21,8 +21,19 @@
         <p>This tool helps in the early detection of osteoporosis.<br>
         Please upload your files for analysis.</p>
 
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="messages">
+                {% for category, message in messages %}
+                    <div class="note">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% endwith %}
+
         <form action="{{ url_for('result') }}" method="POST" enctype="multipart/form-data" class="upload-box">
-            <input type="file" name="file" accept="image/*" required>
+            <label for="file">Upload an image (png, jpg, jpeg, gif, bmp). Max 5 MB.</label>
+            <input id="file" type="file" name="file" accept="image/png,image/jpeg,image/gif,image/bmp" required>
             <br>
             <button type="submit">Upload & Analyze</button>
         </form>
