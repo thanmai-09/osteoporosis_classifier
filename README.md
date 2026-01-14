@@ -81,4 +81,4 @@ Tips:
 - Use a reverse proxy (e.g., Nginx) and enforce HTTPS in production
 
 ## 📜 License
-No license specified. Add a license if you plan to distribute or open-source.
+This project is licensed under the MIT License.
